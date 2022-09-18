@@ -1,1 +1,1 @@
-# daily-CS
+# daily-computer-science
