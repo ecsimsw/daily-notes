@@ -11,7 +11,7 @@ NOSQL : Not Only SQL
 
 #### RDBMS (MySql)
 Join, Foreign Key    
-Only Vertical scailing   
+Only Vertical scaling   
 ACID, Transactional    
 Schema based    
 Array like    
@@ -19,7 +19,7 @@ Array like
 <br>
 
 #### NOSQL (MongoDB)
-Shard Cluster Transacion : 유연한 Sale-out, Horizontal Scailing         
+Shard Cluster Transacion : 유연한 Sale-out, Horizontal Scaling         
 Multi-Document Transaction : lighter weight transactional    
 BASE : ACID와는 다르게 일관성을 어느정도 포기하고 가용성을 우선시한다.   
 Schemaless   
