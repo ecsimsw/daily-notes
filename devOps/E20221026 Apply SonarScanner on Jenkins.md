@@ -14,23 +14,36 @@ sonarqube는 코드를 분석해서 버그 위험 여부, 보안 취약점, 코�
 ### Script
 
 ```
- stage('sonarqube') {  
-	 SONAR_SCANNER_VERSION = "4.7.0.2747"  
-	 SONAR_SCANNER_HOME = "$HOME/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux"  
-	 SONAR_TOKEN = '${YOUR_SONAR_TOKEN}'  
-	 SONAR_SCANNER_OPTS="-server"  
-	 
-	 sh "curl --create-dirs -sSLo $HOME/.sonar/sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_VERSION-linux.zip"  
-	 sh "apt-get update && apt-get install unzip" ## if unzip package doesn't exist
-	 sh "unzip -o $HOME/.sonar/sonar-scanner.zip -d $HOME/.sonar/"  
-	 
-	 sh """  
-		$SONAR_SCANNER_HOME/bin/sonar-scanner \  
-		-Dsonar.organization=${YOUR_SONAR_ORGANIZATION} \  
-		-Dsonar.projectKey=${YOUR_SONAR_PROJECT_KEY} \  
-		-Dsonar.sources=. \  
-		-Dsonar.host.url=https://sonarcloud.io \  
-		-Dsonar.login=b668b1c2410f3b8c47eeb2c6d11cc7c0d8d8e4fd 
-	 """  
-} 
- ```
+stage('sonarqube') {
+    SONAR_SCANNER_VERSION = "4.7.0.2747"
+    SONAR_SCANNER_PATH = "$HOME/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux/bin/"
+
+    SONAR_PROJECT_ORGANIZATION = ${SONAR_PROJECT_ORAGANIZATION}
+    SONAR_PROJECT_KEY = ${SONAR_PROJECT_NAME}
+    SONAR_TOKEN = ${SONAR_PROJECT_TOKEN}
+    SCANNING_PROJECT_PATH = "api"
+
+    sh """
+        curl --create-dirs -sSLo $HOME/.sonar/sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_VERSION-linux.zip 
+        apt-get update && apt-get install unzip
+        unzip -o $HOME/.sonar/sonar-scanner.zip -d $HOME/.sonar/
+    """
+
+    sh """
+      cd $SCANNING_PROJECT_PATH
+      $SONAR_SCANNER_PATH/sonar-scanner \
+      -Dsonar.organization=$SONAR_PROJECT_ORGANIZATION \
+      -Dsonar.projectKey=$SONAR_PROJECT_KEY \
+      -Dsonar.sources=. \
+      -Dsonar.host.url=https://sonarcloud.io   \
+      -Dsonar.login=$SONAR_TOKEN
+    """
+}
+```
+ 
+ 
+ ![image](https://user-images.githubusercontent.com/46060746/197998021-fe28b2c3-222e-444f-86af-725c528b8b05.png)
+
+![image](https://user-images.githubusercontent.com/46060746/197998167-7e0aed4a-3d13-48d5-8727-48643443613f.png)
+
+
