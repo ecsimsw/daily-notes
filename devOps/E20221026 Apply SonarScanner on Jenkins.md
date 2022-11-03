@@ -135,13 +135,14 @@ RUN unzip -o /sonarqube/sonar-scanner.zip -d /sonarqube/
 대략 구조는 다음과 같다.
 
 ```
-parallel {
-   stage('test and ECR') {
+parallel (
+   'test' : stage('test and ECR') {
       stage('test') {}
       stage('push to ECR') {}
-   }
-   stage('sonar-scanner') {}
-}
+   },
+   'sonarscan' : stage('sonar-scanner') {},
+   failFast: true
+)
 ```
 
 그래도 스캐닝 시간이 좀 더 오래 걸려서 약 2분의 시간을 단축할 수 있었다.
