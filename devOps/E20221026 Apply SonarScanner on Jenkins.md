@@ -70,7 +70,6 @@ sh """
 
 <img width="841" alt="image" src="https://user-images.githubusercontent.com/46060746/199000458-db4eba64-05f1-46f8-b282-9e3747a380b3.png">
 
-
 <br>
 
 ### 4. (Optional) 프로젝트 브랜치 이름을 설정한다.
@@ -83,6 +82,10 @@ Sonar-scanner를 실행할 때 SonarCloud의 프로젝트에 브랜치 이름으
 
 ![IMG_1996](https://user-images.githubusercontent.com/46060746/199001476-aef068bf-1721-49c8-b7c5-a2a721106d06.jpg)
 
+이때 SonarCloud엔 `Short lived branch`, `Long lived branch`라는 개념이 존재한다. 간단히 전자는 임시 분석된 브랜치를 지정하며 30일 이후에 자동 삭제된다.    
+프로젝트의 Branches -> Long lived branches pattern 으로 Long lived branch를 적용할 브랜치를 정규식으로 지정할 수 있다. 아래 예시에선, 'test, dev, internal, stag' 네가지 이름의 branch를 Long lived branch로 한다는 정규식을 적용한 예시이다.
+
+<img width="1437" alt="image" src="https://user-images.githubusercontent.com/46060746/201387014-db20a43d-35c7-4a63-a4c6-62dfeacb6143.png">
 
 <br>
 
