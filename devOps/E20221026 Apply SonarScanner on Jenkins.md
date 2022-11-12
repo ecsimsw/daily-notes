@@ -102,14 +102,12 @@ Sonar-scanner를 실행할 때 SonarCloud의 프로젝트에 브랜치 이름으
 팀의 젠킨스는 kubernetes plugin을 이용하여 원하는 step(빌드 과정)이 실행되길 원하는 컨테이너를 지정할 수 있었다. 해당 과정을 매번 반복하지 않을 수 있도록 컨테이너 이미지를 만들었다. 해당 이미지의 dockerfile은 다음과 같다. 
 
 ```
-FROM ubuntu:20.04
+FROM alpine:latest
 
-RUN apt-get -y update \
-	&& apt-get -y install curl \
-	&& apt-get -y install unzip
+RUN apk add curl
+RUN apk add unzip
 
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \
-	&& apt-get -y install nodejs
+RUN apk add --update nodejs npm 
 
 RUN curl --create-dirs -sSLo /sonarqube/sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-linux.zip
 RUN unzip -o /sonarqube/sonar-scanner.zip -d /sonarqube/
