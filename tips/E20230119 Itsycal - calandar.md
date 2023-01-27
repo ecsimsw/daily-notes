@@ -1,5 +1,9 @@
 ## 캘린더 세팅
 
+itsycal
+
+`https://www.mowglii.com/itsycal/`
+
 ```
 계정 유형: 고급
 사용자 이름: 네이버 주소
