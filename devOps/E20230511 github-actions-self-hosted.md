@@ -6,6 +6,34 @@ Organization 범위의 Actions -> Runner를 등록하면 포함된 Repository는
 
 나는 두 빌드 노드에 각각 2개씩 Runner를 실행시켰다. (총 4개의 Job이 병렬 실행 가능)
 
+## Reusable workflow
+서비스가 여러 저장소로 나눠져 있어 매번 동일한 workflow 코드가 올라가야 했고, 관리가 불편했다.     
+Github actions reusable workflow 를 사용하면 한 코드로 workflow를 재사용할 수 있다.
+
+아래처럼 on.workflow_call를 주고 job을 똑같이 정의한다. 
+```
+on:
+  workflow_call:
+jobs:
+  job_test:
+    runs-on: mac
+    name: Test
+    steps:
+```
+
+workflow가 포함된 저장소 Settings -> Actions -> General에 Permission을 확인한다. 특히 Access 기본 값이 `Not accessible`인데 이를 `Accessible from repositories`로 변경해야 한다.
+그렇지 않으면 사용 측에서 common workflow를 찾지 못한다.
+
+```
+jobs:
+  job_test:
+    uses: {ORG}/{COMMON_REPO}/.github/workflows/{FILE}@{REF}
+    secrets: inherit
+```
+
+Common workflow path도 .github/workflows로 맞춰줘야 한다.
+
+
 ## Github actions health check and run script 
 
 
