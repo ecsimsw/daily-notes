@@ -1,1 +1,1 @@
-# daily-computer-science
+# daily-note-public
