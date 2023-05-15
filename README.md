@@ -1,4 +1,5 @@
-## My daily note
+## My daily note    
+![main](./.images/main.jpg)
     .
     ├── AWS
     │   ├── E20220916 AWS ECR.md
@@ -85,14 +86,10 @@
     │   ├── E20230329 Find using port by PID.md
     │   ├── E20230418 drwxr-xr-x.md
     │   └── E20230510 Linux kill.md
-    ├── Tip
-    │   ├── E20221007 Docker prune.md
-    │   ├── E20221012 IntelliJ - Column selection.md
-    │   ├── E20230215 Git author tip.md
-    │   ├── E20230330 Check web page has changed.md
-    │   ├── E20230414 My terminal commands.md
-    │   └── E20230417 Vertual Network Computing.md
-    └── images
-        ├── Praha.jpg
-        ├── main.jpg
-        └── temp
+    └── Tip
+        ├── E20221007 Docker prune.md
+        ├── E20221012 IntelliJ - Column selection.md
+        ├── E20230215 Git author tip.md
+        ├── E20230330 Check web page has changed.md
+        ├── E20230414 My terminal commands.md
+        └── E20230417 Vertual Network Computing.md
