@@ -17,7 +17,7 @@ jobs:
           touch README.md
           git add README.md
           echo "# My daily note    " > README.md
-          echo "![main](./.images/main.jpg)    " >> README.md
+          echo -e "![main](./.images/main.jpg)    \n" >> README.md
           tree --dirsfirst --noreport -I README.md | sed 's/^/    /' >> README.md
       - name: push
         env:
