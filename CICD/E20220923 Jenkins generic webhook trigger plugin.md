@@ -26,7 +26,8 @@ webhook의 요청이 어떻게 나가는지 확인해본다. (eg, [Gitlab-webhoo
 원하는 Job의 Build triggers에서 Generic webhook trigger 사용을 체크한다.
 
 
-![Unknown](https://user-images.githubusercontent.com/46060746/191938346-51c1acbc-b394-44ce-b3eb-eb42188c80d1.png)
+<img width="677" alt="image" src="https://github.com/ecsimsw/daily-note-public/assets/46060746/b50af0ee-3dfa-4b20-a221-c3dc9046ca32">
+
 
 <br>
 
@@ -48,7 +49,8 @@ Expression → 원하는 값의 key (ex, $.ref)
 원하는 토큰 이름을 입력한다. 
 
 
-![Unknown](https://user-images.githubusercontent.com/46060746/191938595-a3a75137-5f40-40fc-b0a6-fd1e93d28883.png)
+<img width="888" alt="image" src="https://github.com/ecsimsw/daily-note-public/assets/46060746/d42e12e5-c3a5-4c05-8f98-befde0f28579">
+
 
 
 Webhook의 URL이 이 토큰을 파라미터로 갖는다.
@@ -83,7 +85,7 @@ Webhook을 설정한다. Webhook을 발생시킬 이벤트 종류를 선택하�
 설정 후 해당 이벤트를 발생시켰을 때 HTTP response status가 200이면서 아래와 같이 Jenkins에 설정한 트리거에 대한 정보가 반환된다면 알맞게 Webhook을 발생시켰고, Jenkins Trigger가 알맞게 응답한 것이다.
 
 
-![Unknown](https://user-images.githubusercontent.com/46060746/191939083-5d0a0100-0a8d-4cfc-b2e3-27400763534f.png)
+<img width="868" alt="image" src="https://github.com/ecsimsw/daily-note-public/assets/46060746/7401e0a4-67d8-4b75-8432-75af169dd4c5">
 
 
 
