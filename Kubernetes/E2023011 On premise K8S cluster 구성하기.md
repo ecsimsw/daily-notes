@@ -1,6 +1,8 @@
 # How to configure cluster on proxmox
 
-### 0. Set static ip
+## Commons
+
+### Set static ip
 
 `vi /etc/netplan/00-installer-config.yaml`
 
@@ -21,142 +23,139 @@ network:
 netplan apply
 ```
 
-* 다른 서비스에서 전혀 사용되지 않는 내부 IP로 설정한다.
-
-
-### 1. Disable swap file
-
+#### Disable swap
 ```
 sudo -i
 swapoff -a
 echo 0 > /proc/sys/vm/swappiness
-sed -e '/swap/ s/^#*/#/' -i /etc/fstab 
+sed -e '/swap/ s/^#*/#/' -i /etc/fstab
 ```
 
-
-### 2. install crio (Ubuntu 20.04.5 LTS)
-
+#### Install crio v1.23
 ```
-sudo apt update && sudo apt upgrade
+sudo apt update -y && 
+sudo apt upgrade -y &&
 
-OS=xUbuntu_20.04
-CRIO_VERSION=1.23
-echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/ /"|sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
-echo "deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/$CRIO_VERSION/$OS/ /"|sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable:cri-o:$CRIO_VERSION.list
+OS=xUbuntu_20.04 &&
+CRIO_VERSION=1.23 &&
 
-curl -L https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable:cri-o:$CRIO_VERSION/$OS/Release.key | sudo apt-key add -
-curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/Release.key | sudo apt-key add -
-```
+echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/ /"|sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list &&
+echo "deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/$CRIO_VERSION/$OS/ /"|sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable:cri-o:$CRIO_VERSION.list &&
 
-```
-sudo apt update
-sudo apt install cri-o cri-o-runc
-apt show cri-o
-```
+curl -L https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable:cri-o:$CRIO_VERSION/$OS/Release.key | sudo apt-key add - &&
+curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/Release.key | sudo apt-key add - && 
 
-```
-sudo systemctl enable crio.service
-sudo systemctl start crio.service
-```
+sudo apt update -y &&
+sudo apt install cri-o cri-o-runc -y &&
 
-```
+sudo systemctl enable crio.service &&
+sudo systemctl start crio.service &&
+
 systemctl status crio
 ```
 
-https://computingforgeeks.com/install-cri-o-container-runtime-on-ubuntu-linux/
+#### Install Kubeadm, Kubelet, Kubectl
+```
+sudo apt-get update -y &&
+sudo apt-get install -y apt-transport-https ca-certificates curl &&
 
-### 3. Kubeadm 
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg &&
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list &&
 
-```
-sudo apt-get update
-sudo apt-get install -y apt-transport-https ca-certificates curl
-```
-
-```
-sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-```
-
-```
-sudo apt-get update
-sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-get update &&
+sudo apt-get install -y kubelet kubeadm kubectl &&
 sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
-#### MASTER NODE
-
+#### Network config
 ```
-sudo kubeadm init --pod-network-cidr=192.168.0.0/16
-```
-
-```
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
-```
-
-#### WORKER NODE 
-
-```
-kubeadm join 10.1.250.1:6443 --token r3pfhd.la9qthynmoetyg4m --discovery-token-ca-cert-hash sha256:1ed9b24ff8d49227027800f5d359450f1d2aa1d2c2c793da1eb571fe05057caf --cri-socket=unix:///var/run/crio/crio.sock --node-name k8s-4-worker-401
-```
-
-```
-unset KUBECONFIG
-export KUBECONFIG=/etc/kubernetes/admin.conf
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
-```
-
-if) `[ERROR FileContent--proc-sys-net-bridge-bridge-nf-call-iptables]: /proc/sys/net/bridge/bridge-nf-call-iptables does not exist`
-
-```
-modprobe br_netfilter
-```
-
-if) `[ERROR FileContent--proc-sys-net-ipv4-ip_forward]: /proc/sys/net/ipv4/ip_forward contents are not set to 1`
-
-```
+modprobe br_netfilter &&
 echo '1' > /proc/sys/net/ipv4/ip_forward
 ```
 
-if) `[ERROR FileAvailable--etc-kubernetes-pki-ca.crt]: /etc/kubernetes/pki/ca.crt already exists`
-
+#### Declare node-ip on kubelet environment values
 ```
-rm -rf /etc/kubernetes/pki/ca.crt 
-```
-
-
-### 4. Install Calico
-
-https://projectcalico.docs.tigera.io/getting-started/kubernetes/quickstart 
-
-#### Install
-
-```
-kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.24.5/manifests/tigera-operator.yaml
-kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.24.5/manifests/custom-resources.yaml
+NODE_IP=192.168.52.10 
+echo "KUBELET_EXTRA_ARGS=\"--node-ip=$NODE_IP\"" >> /etc/default/kubelet
 ```
 
-#### before calico
-```
-root@k8s-4:~# kubectl get nodes
-NAME               STATUS     ROLES           AGE     VERSION
-k8s-4              Ready      control-plane   6m51s   v1.26.0
-k8s-4-worker-401   NotReady   <none>          1s      v1.26.0
-```
+Declare `NODE_IP` according to your VM settings. Without this task, the node ip registered to the cluster is set to the default NAT ip address(10.0.2.15).
 
-#### after calico
+## Master node
+
+#### Declare `NODE_IP`, `POD_NETWORK_CIDR` according to your configuration.
 
 ```
-root@k8s-4:~# kubectl get nodes
-NAME               STATUS   ROLES           AGE     VERSION
-k8s-4              Ready    control-plane   7m52s   v1.26.0
-k8s-4-worker-401   Ready    <none>          62s     v1.26.0
+NODE_IP=192.168.52.10
+POD_NETWORK_CIDR=172.16.0.0/16
 ```
 
-if) `nslookup can’t find server`
+#### kubeadm init
+
 ```
-kubeadm reset
+sudo kubeadm init \
+--pod-network-cidr=$POD_NETWORK_CIDR \
+--apiserver-advertise-address=$NODE_IP \
+--control-plane-endpoint=$NODE_IP
+```
+
+#### Set user env value
+
+root user
+```
+export KUBECONFIG=/etc/kubernetes/admin.conf
+```
+
+regular user
+```
+mkdir -p $HOME/.kube &&
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config &&
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+#### Check list
+```
+# Check pod network cidr
+kubectl cluster-info dump | grep -m 1 cluster-cidr
+
+# Check master node ip
+kubectl get nodes -o wide
+
+# Get join command
+kubeadm token create --print-join-command
+```
+
+#### Get calico manifest file
+```
+CALICO_VERSION=3.25 &&
+curl https://docs.projectcalico.org/archive/v$CALICO_VERSION/manifests/calico.yaml -O
+```
+
+#### Enable CALICO_IPV4POOL_CIDR and change the value as your pod network cidr
+```
+- name: CALICO_IPV4POOL_CIDR
+  value: "172.16.0.0/16"
+```
+
+#### Apply
+```
+kubectl apply -f calico.yaml
+```
+
+## Worker node
+
+#### Get join command from master node
+```
+kubeadm token create --print-join-command
+```
+
+#### Kubeadm join
+```
+kubeadm join 192.168.52.10:6443 --token 6iilcp.2uh68yajgxq95atw --discovery-token-ca-cert-hash sha256:4d2e33fa31dfd4596d76bc570f8849052b163e62662021ad6f344bdb2a3544cf 
+```
+
+#### Run 'kubectl get nodes' on master
+
+```
+kubectl get nodes -o wide
 ```

@@ -1,4 +1,4 @@
-## Github actions self hosted runner
+## Github actions self hosted runner 사용 전략
 
 Github actions self hosted runner로 github hosting에서 벗어났다.     
 Organization 범위의 Actions -> Runner를 등록하면 포함된 Repository는 모두 해당 Runner를 사용할 수 있다.   
