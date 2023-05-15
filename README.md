@@ -1,5 +1,5 @@
-## My daily note    
-![main](./.images/main.jpg)
+# My daily note    
+![main](./.images/main.jpg)    
     .
     ├── AWS
     │   ├── E20220916 AWS ECR.md
