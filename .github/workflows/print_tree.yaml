@@ -13,7 +13,11 @@ jobs:
       - name: Append directory tree to README
         run: |
           sudo apt-get install tree
-          tree --dirsfirst --noreport -I README.md | sed 's/^/    /' > README.md
+          sudo rm -rf README.md
+          touch README.md
+          git add README.md
+          echo "## My daily note" > README.md
+          tree --dirsfirst --noreport -I README.md | sed 's/^/    /' >> README.md
       - name: push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
