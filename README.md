@@ -1,3 +1,4 @@
+## My daily note
     .
     ├── AWS
     │   ├── E20220916 AWS ECR.md
