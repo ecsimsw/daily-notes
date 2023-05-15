@@ -18,7 +18,7 @@ jobs:
           git add README.md
           echo "## My daily note    " > README.md
           echo "![main](./.images/main.jpg)" >> README.md
-          tree --dirsfirst --noreport -I "README.md|.images" | sed 's/^/    /' >> README.md
+          tree --dirsfirst --noreport -I "README.md" | sed 's/^/    /' >> README.md
       - name: push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
