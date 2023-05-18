@@ -62,7 +62,7 @@
     │   ├── E20221201 How to create user, role on K8S.md
     │   ├── E20221206 Master node, worker node .md
     │   ├── E20221206 Pod.md
-    │   ├── E2023011 On premise K8S cluster 구성하기.md
+    │   ├── E20230111 On premise K8S cluster 구성하기.md
     │   ├── E20230111 Why you can’t ping a Kubernetes Service.md
     │   ├── E20230114 How to configure cluster on proxmox.md
     │   ├── E20230115 DNS, K8S Core DNS.md
