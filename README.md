@@ -29,7 +29,7 @@
     │   ├── E20221010 JPA Transactional readOnly.md
     │   ├── E20221016 Redis 아는 척하기.md
     │   ├── E20221016 캐시 전략.md
-    │   └── E20230523 If the search condition is not based on the shard key, does it still need to search all the sharding database servers?.md
+    │   └── E20230523 Sharding, does it still need to search all the sharding database servers?.md
     ├── DEV
     │   ├── E20220921 인증과 인가.md
     │   ├── E20221014 Spring MVC DTO에 Setter가 필요한 경우.md
