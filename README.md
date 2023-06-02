@@ -13,7 +13,8 @@
     │   ├── E20230413 Access EKS.md
     │   ├── E20230418 ECR KMS encryption.md
     │   ├── E20230514 Live EKS cluster 구축하며 생긴 일.md
-    │   └── E20230531 EKS Cloudwatch agent.md
+    │   ├── E20230531 EKS Cloudwatch agent.md
+    │   └── E20230602 Cloudwatch slack alert with SNS, Lambda, Chatbot.md
     ├── CICD
     │   ├── E20220915 Jenkins shared library.md
     │   ├── E20220923 Jenkins generic webhook trigger plugin.md
