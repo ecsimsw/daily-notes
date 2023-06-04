@@ -25,7 +25,7 @@ use mymaket                           // create db
 db.createCollection("order-audit")    // create collection
 ```
 
-#### Add gradle dependency (build.gradle)
+### Add gradle dependency (build.gradle)
 ```
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
