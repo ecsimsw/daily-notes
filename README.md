@@ -44,6 +44,7 @@
     │   ├── E20230418 내가 써본 부하 테스트 툴.md
     │   ├── E20230514 나의 인증 토큰 관리 방법.md
     │   ├── E20230518 SHA256.md
+    │   ├── E20230604 spring & docker kafka config.md
     │   └── E20230604 spring & docker mongo config.md
     ├── ENV
     │   ├── E20221130 Minikube 설정기.md
