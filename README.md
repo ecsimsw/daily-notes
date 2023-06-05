@@ -94,7 +94,8 @@
     │   ├── E20230323 하위 폴더들이 차지 하고 있는 디스크 용량.md
     │   ├── E20230329 Find using port by PID.md
     │   ├── E20230418 drwxr-xr-x.md
-    │   └── E20230510 Linux kill.md
+    │   ├── E20230510 Linux kill.md
+    │   └── E20230605 linux cpu info.md
     └── Tip
         ├── E20221007 Docker prune.md
         ├── E20221012 IntelliJ - Column selection.md
