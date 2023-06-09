@@ -106,4 +106,5 @@
         ├── E20230414 My terminal commands.md
         ├── E20230417 Vertual Network Computing.md
         ├── E20230605 ecsimsw-server zsh config.md
-        └── E20230605 my server banner.md
+        ├── E20230605 my server banner.md
+        └── E20230609 MAC - flush dns cache.md
