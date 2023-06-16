@@ -75,7 +75,8 @@
     │   ├── E20230115 DNS, K8S Core DNS.md
     │   ├── E20230308 Deployment의 파드 업데이트 방식.md
     │   ├── E20230308 매번 헷갈리는 Replicaset, Daemonset, Statefulset, Deployment.md
-    │   └── E20230616 k8s 세가지 probe.md
+    │   ├── E20230616 k8s 세가지 probe.md
+    │   └── E20230616 statefulset.md
     ├── Network
     │   ├── E20220918 TCP Handshake.md
     │   ├── E20221002 CIDR.md
