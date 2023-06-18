@@ -110,4 +110,5 @@
         ├── E20230605 ecsimsw-server zsh config.md
         ├── E20230605 my server banner.md
         ├── E20230609 MAC - flush dns cache.md
-        └── E20230618 ghcr.md
+        ├── E20230618 ghcr.md
+        └── E20230618 vnc server on ubuntu.md
