@@ -51,7 +51,8 @@
     │   ├── E20230607 가장 간단한 웹서버.md
     │   ├── E20230620 Kafka partition key, group id.md
     │   ├── E20230717 Hibernate log properties.md
-    │   └── E20230717 Persistence context with 용관.md
+    │   ├── E20230717 Persistence context with 용관.md
+    │   └── E20230720 Springboot - change loglevel at runtime.md
     ├── ENV
     │   ├── E20221130 Minikube 설정기.md
     │   ├── E20230105 Autosuggestions.md
