@@ -34,7 +34,8 @@
     │   ├── E20221016 캐시 전략.md
     │   ├── E20230523 Sharding, does it still need to search all the sharding database servers?.md
     │   ├── E20230722 DB file size.md
-    │   └── E20230723 DB 인덱싱.md
+    │   ├── E20230723 DB 인덱싱.md
+    │   └── E20230725 DB 조회 실행 순서.md
     ├── DEV
     │   ├── E20220921 인증과 인가.md
     │   ├── E20221014 Spring MVC DTO에 Setter가 필요한 경우.md
