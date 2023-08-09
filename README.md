@@ -57,7 +57,8 @@
     │   ├── E20230717 Persistence context with 용관.md
     │   ├── E20230720 Springboot - change loglevel at runtime.md
     │   ├── E20230725 Nginx skeleton.md
-    │   └── E20230805 java String length.md
+    │   ├── E20230805 java String length.md
+    │   └── E20230809 서버 개발 시큐어 가이드.md
     ├── ENV
     │   ├── E20221130 Minikube 설정기.md
     │   ├── E20230105 Autosuggestions.md
