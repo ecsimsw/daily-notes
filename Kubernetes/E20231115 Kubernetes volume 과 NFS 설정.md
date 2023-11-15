@@ -11,6 +11,15 @@ Picup에선 그 중 NFS를 사용하였다.
 NFS dynamic provisioning 처리 후에는 storage class 를 참조하는 것으로 동적으로 볼륨을 생성하고 이를 claim 할 수 있게 된다.
 이 storage class 사용을 위한 동적 할당도 provisioner 가 필요한다. 
 
+NFS는 3 또는 4 버전을 사용한다. 
+
+```
+sudo cat /proc/fs/nfsd/versions
+
+# -2 +3 +4 +4.1 +4.2
+```
+
+
 ## Server side
 
 Sample shared directory path : `/shared` 
@@ -21,6 +30,8 @@ sudo mkdir /shared
 sudo chmod 755 /shared
 sudo chown -R nobody:nogroup /shared
 ```
+
+(Permission denided 가 나오면다면 공유 폴더의 권한 모드 확인할 것)
 
 ### Install nfs-server
 
@@ -34,7 +45,7 @@ service nfs-server status
 `sudo vi /etc/exports`
 
 ```
-/shared *(rw,sync,insecure,no_root_squash,no_subtree_check,fsid=0f)
+/shared *(rw,sync,insecure,no_root_squash,no_subtree_check,fsid=0)
 ```
 - rw : 읽기, 쓰기   
 - sync : NFS가 응답 전 변경 내용을 기록함
