@@ -2,6 +2,7 @@
 ```
 sudo adduser ecsimsw
 sudo adduser ecsimsw sudo
+sudo chown -R ecsimsw /home/
 ```
 
 ### Client - rsa 
