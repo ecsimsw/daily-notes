@@ -12,3 +12,35 @@ For use cases like bank payments, we might need to redirect an HTTP POST request
 As per HTTP 1.1 protocol reference, status codes 301 (Moved Permanently) and 302 (Found) allow the request method to be changed from POST to GET. The specification also defines the corresponding 307 (Temporary Redirect) and 308 (Permanent Redirect) status codes that don’t allow the request method to be changed from POST to GET.
 
 Let’s look at the code for redirecting a post request to another post request:
+
+## Code example
+
+```
+@Override
+public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+    if (!(handler instanceof HandlerMethod) || !isLoginNeeded((HandlerMethod) handler)) {
+        return true;
+    }
+    try {
+        var cookies = request.getCookies();
+        var accessToken = accessToken(cookies);
+        if (authTokenService.isValidToken(accessToken)) {
+            return true;
+        }
+        var refreshToken = refreshToken(cookies);
+        if (!authTokenService.isValidToken(accessToken) && authTokenService.isValidToken(refreshToken)) {
+            var reissued = authTokenService.reissue(accessToken, refreshToken);
+            LOGGER.info("Refresh token reissued");
+            var newAuthCookies = createAuthCookies(reissued);
+            newAuthCookies.forEach(response::addCookie);
+            response.setHeader("Location", request.getRequestURI());
+            response.setStatus(HttpStatus.PERMANENT_REDIRECT.value());
+            return false;
+        }
+        throw new TokenException("Invalid token");
+    } catch (Exception e) {
+        response.setStatus(HttpStatus.UNAUTHORIZED.value());
+        throw new UnauthorizedException("Unauthorized request");
+    }
+}
+```
