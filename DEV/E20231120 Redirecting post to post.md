@@ -15,7 +15,7 @@ Let’s look at the code for redirecting a post request to another post request:
 
 ## Code example
 
-```
+``` java
 @Override
 public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
     if (!(handler instanceof HandlerMethod) || !isLoginNeeded((HandlerMethod) handler)) {
