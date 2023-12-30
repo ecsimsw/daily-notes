@@ -36,7 +36,8 @@
     │   ├── E20230722 DB file size.md
     │   ├── E20230723 DB 인덱싱.md
     │   ├── E20230725 DB 조회 실행 순서.md
-    │   └── E20231116 create mysql user for specific ip.md
+    │   ├── E20231116 create mysql user for specific ip.md
+    │   └── E20231230 mongosh 명령어 모음.md
     ├── DEV
     │   ├── E20220921 인증과 인가.md
     │   ├── E20221014 Spring MVC DTO에 Setter가 필요한 경우.md
