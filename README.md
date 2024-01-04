@@ -24,7 +24,7 @@
     │   ├── E20230414 Jenkins agent health checker.md
     │   ├── E20230511 github-actions-self-hosted 사용 전략.md
     │   ├── E20230714 Github action gradle cache.md
-    │   └── E20240104 pr validator.md
+    │   └── E20240104 pr file change validator.md
     ├── DB
     │   ├── E20221007 NOSQL vs RDBMS.md
     │   ├── E20221008 ACID.md
