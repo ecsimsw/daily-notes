@@ -10,6 +10,7 @@ sudo certbot certonly --standalone -d anime-kr.ecsimsw.com
 sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
 ```
 
+#### Nginx
 ```
 server {
     ssl_certificate /etc/letsencrypt/live/anime-kr.ecsimsw.com/fullchain.pem;
