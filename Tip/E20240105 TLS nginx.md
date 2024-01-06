@@ -5,6 +5,11 @@ sudo apt install certbot python3-certbot-nginx
 sudo certbot certonly --standalone -d anime-kr.ecsimsw.com
 ```
 
+#### If 80 port is already used by dummy
+```
+sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
+```
+
 ```
 server {
     ssl_certificate /etc/letsencrypt/live/anime-kr.ecsimsw.com/fullchain.pem;
