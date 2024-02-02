@@ -65,7 +65,8 @@
     │   ├── E20230812 Spring remote ip.md
     │   ├── E20231120 Redirecting post to post.md
     │   ├── E20240104 Nginx LB.md
-    │   └── E20240104 install nginx.md
+    │   ├── E20240104 install nginx.md
+    │   └── E20240202 Animekr 재배포하면서...md
     ├── ENV
     │   ├── E20221130 Minikube 설정기.md
     │   ├── E20230105 Autosuggestions.md
