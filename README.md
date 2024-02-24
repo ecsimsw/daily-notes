@@ -155,4 +155,5 @@
         ├── E20230705 switch java version.md
         ├── E202311014 ubuntu new user 세팅.md
         ├── E20240105 TLS nginx.md
-        └── E20240211 Intellij refactor options.md
+        ├── E20240211 Intellij refactor options.md
+        └── E20240224 disable sonoma input lang icon.md
