@@ -6,7 +6,7 @@
 
 `defaults write kCFPreferencesAnyApplication TSMLanguageIndicatorEnabled 0`
 
-그리고 껐다 다시 키기
+그리고 재부팅
 
 
 
