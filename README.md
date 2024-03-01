@@ -69,7 +69,8 @@
     │   ├── E20240104 install nginx.md
     │   ├── E20240202 Animekr 재배포하면서...md
     │   ├── E20240222 SOP, CORS.md
-    │   └── E20240222 XSS, CSRF.md
+    │   ├── E20240222 XSS, CSRF.md
+    │   └── E20240302 AUTO_INCREAMENT로 batch insert 가 안됐던 이유.md
     ├── ENV
     │   ├── E20221130 Minikube 설정기.md
     │   ├── E20230105 Autosuggestions.md
