@@ -1,4 +1,4 @@
-## E20240302 route53 에 구글 도메인.md
+## E20240302 route53 으로 domain 장애 조치.md
 
 ### Custom name server
 
