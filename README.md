@@ -74,8 +74,8 @@
     │   ├── E20240302 AUTO_INCREAMENT로 batch insert 가 안됐던 이유.md
     │   ├── E20240306 해시맵의 동시성 문제.md
     │   ├── E20240307 AtomicIneteger CAS 어떻게 동작하는지.md
-    │   ├── E20240307 레디스 pub,sub.md
-    │   └── 내 서비스를 예시로 Redis, RabbitMQ, Kafka.md
+    │   ├── E20240307 내 서비스를 예시로 Redis, RabbitMQ, Kafka.md
+    │   └── E20240307 레디스 pub,sub.md
     ├── ENV
     │   ├── E20221130 Minikube 설정기.md
     │   ├── E20230105 Autosuggestions.md
