@@ -8,11 +8,6 @@
 2. google domains
 ![image](https://github.com/ecsimsw/daily-note-public/assets/46060746/549a14d9-d0b6-4e02-a044-cc4d35979f99)
 
-3. route53 record
-
-![image](https://github.com/ecsimsw/daily-note-public/assets/46060746/36735bbf-0f56-484e-8fab-5d918fb7b226)
-
-
 ### Health check
 
 1. register health check
@@ -21,6 +16,7 @@
 2. dashboard
 ![image](https://github.com/ecsimsw/daily-note-public/assets/46060746/fcd6025a-8529-4f3d-bb98-b3bde9c63225)
 
-### Handle
+### route53 record
 
-![image](https://github.com/ecsimsw/daily-note-public/assets/46060746/992671e7-ff50-4672-82a5-5573cbba7051)
+![image](https://github.com/ecsimsw/daily-note-public/assets/46060746/83c7d560-6970-48bc-8212-956d5120730a)
+
