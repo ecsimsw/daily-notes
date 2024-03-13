@@ -41,7 +41,8 @@
     │   ├── E20231116 create mysql user for specific ip.md
     │   ├── E20231230 mongosh 명령어 모음.md
     │   ├── E20240220 table based lock 을 row lock 으로.md
-    │   └── E20240314 Mysql MVCC.md
+    │   ├── E20240314 Mysql MVCC.md
+    │   └── E20240314 gap lock.md
     ├── DEV
     │   ├── E20220921 인증과 인가.md
     │   ├── E20221014 Spring MVC DTO에 Setter가 필요한 경우.md
