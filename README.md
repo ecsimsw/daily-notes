@@ -43,7 +43,8 @@
     │   ├── E20240220 table based lock 을 row lock 으로.md
     │   ├── E20240314 Mysql MVCC.md
     │   ├── E20240314 gap lock.md
-    │   └── E20240321 실행계획으로 보는 것.md
+    │   ├── E20240321 실행계획으로 보는 것.md
+    │   └── E20240321 클러스터드 인덱스, 넌클러스터드 인덱스.md
     ├── DEV
     │   ├── E20220921 인증과 인가.md
     │   ├── E20221014 Spring MVC DTO에 Setter가 필요한 경우.md
