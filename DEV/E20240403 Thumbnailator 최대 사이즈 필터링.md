@@ -57,8 +57,10 @@ private static ImageFilter getImageFilter(float scale) {
         try {
             if (image.getWidth() * scale > MINIMUM_SIZE && image.getHeight() * scale > MINIMUM_SIZE) {
                 return Thumbnails.of(image)
-                    .scale(scale)
-                    .asBufferedImage();
+                    .size(
+                        (int) (image.getWidth() * scale),
+                        (int) (image.getHeight() * scale)
+                    ).asBufferedImage();
             }
             return image;
         } catch (IOException e) {
