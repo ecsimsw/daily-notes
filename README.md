@@ -84,7 +84,8 @@
     │   ├── E20240307 레디스 pub,sub.md
     │   ├── E20240321 named 락에 Transactional new.md
     │   ├── E20240328 비동기, Non blocking.md
-    │   └── E20240403 Thumbnailator 최대 사이즈 필터링.md
+    │   ├── E20240403 Thumbnailator 최대 사이즈 필터링.md
+    │   └── E20240407 HikariCP의 Connection check.md
     ├── ENV
     │   ├── E20221130 Minikube 설정기.md
     │   ├── E20230105 Autosuggestions.md
