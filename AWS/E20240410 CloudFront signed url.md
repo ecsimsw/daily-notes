@@ -57,3 +57,16 @@ CannedSignerRequest cannedSignerRequest = createRequestForCannedPolicy(X,X,X);
 CloudFrontUtilities cloudFrontUtilities = CloudFrontUtilities.create();
 SignedUrl signedUrl = cloudFrontUtilities.getSignedUrlWithCannedPolicy(cannedSignerRequest);
 ```
+
+/// custom 으로 하면 ip range 도 제한 가능
+
+``` java
+return CustomSignerRequest.builder()
+    .resourceUrl(cloudFrontUrl)
+    .privateKey(Path.of("/Users/kimjinhwan/temp/private_key.pem"))
+    .keyPairId(publicKeyId)
+    .expirationDate(expirationDate)
+//            .activeDate(activeDate) // Optional.
+     .ipRange("192.168.0.1/24") // Optional.
+    .build();
+```
