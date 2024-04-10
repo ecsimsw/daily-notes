@@ -16,6 +16,7 @@
     │   ├── E20230531 EKS Cloudwatch agent.md
     │   ├── E20230602 Cloudwatch slack alert with SNS, Lambda, Chatbot.md
     │   ├── E20240302 route53 으로 domain 장애 조치.md
+    │   ├── E20240410 CloudFront jwt decoder function.md
     │   └── E20240410 CloudFront signed url.md
     ├── CICD
     │   ├── E20220915 Jenkins shared library.md
