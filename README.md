@@ -88,7 +88,8 @@
     │   ├── E20240328 비동기, Non blocking.md
     │   ├── E20240403 Thumbnailator 최대 사이즈 필터링.md
     │   ├── E20240407 HikariCP의 Connection check.md
-    │   └── E20240418 java foreach linkedList.md
+    │   ├── E20240418 java foreach linkedList.md
+    │   └── E20240425 spring boot rabbitmq settings.md
     ├── ENV
     │   ├── E20221130 Minikube 설정기.md
     │   ├── E20230105 Autosuggestions.md
