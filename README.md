@@ -90,7 +90,8 @@
     │   ├── E20240407 HikariCP의 Connection check.md
     │   ├── E20240418 java foreach linkedList.md
     │   ├── E20240425 spring boot rabbitmq settings.md
-    │   └── E20240428 영속성컨텍스트와 OSIV.md
+    │   ├── E20240428 영속성컨텍스트와 OSIV.md
+    │   └── E20240504 hashicorp Vault.md
     ├── ENV
     │   ├── E20221130 Minikube 설정기.md
     │   ├── E20230105 Autosuggestions.md
