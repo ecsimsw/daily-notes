@@ -182,4 +182,5 @@
         ├── E20240211 Intellij refactor options.md
         ├── E20240224 disable sonoma input lang icon.md
         ├── E20240302 ubuntu delete nginx.md
-        └── E20240319 reset Grafana user .md
+        ├── E20240319 reset Grafana user .md
+        └── E20240516 Pem 키를 환경 변수로 넣어야할 때.md
