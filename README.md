@@ -131,7 +131,8 @@
     │   ├── E20230713 PodDisruptionBudget.md
     │   ├── E20230714 Core dns name policy.md
     │   ├── E20230719 Service port.md
-    │   └── E20231115 Kubernetes volume 과 NFS 설정.md
+    │   ├── E20231115 Kubernetes volume 과 NFS 설정.md
+    │   └── E20240517 Install k8s v1.28.md
     ├── Network
     │   ├── 20240128 HTTP 버전.md
     │   ├── E20220918 TCP Handshake.md
