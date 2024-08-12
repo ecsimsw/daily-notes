@@ -111,7 +111,8 @@
     │   ├── E20230513 My ubuntu dock conf.md
     │   ├── E20240103 ubuntu 22 docker install.md
     │   ├── E20240108 docker prune all.md
-    │   └── E20240812 Check list.md
+    │   ├── E20240812 Check list.md
+    │   └── E20240812 Mac background items added.md
     ├── Git
     │   ├── E20220915 Git submodule.md
     │   ├── E20221019 How to migrate multiple repo to mono repo.md
