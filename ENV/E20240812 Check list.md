@@ -7,4 +7,5 @@
 - autojump
 - autosuggestions
 - intellij
-- 
+- spectacle
+- dozer
