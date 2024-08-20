@@ -6,7 +6,7 @@
 - itsycal
 - autojump
 - autosuggestions
-- intellij
+- intellij / jumper
 - spectacle
 - dozer
 
