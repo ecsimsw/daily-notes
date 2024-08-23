@@ -1,4 +1,42 @@
 # My daily note    
+# Issue List
+
+- StreamNative - Tuya는 왜 Pulsar를 선택했을까
+- Lambda와 WAF를 이용한 Rate-Based Blacklisting 기능 구현
+- AWS를 활용한 확장성 높은 모바일 트레이딩 시스템 (MTS) 구축하기
+- 리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 : NHN Cloud
+
+## Closed Issues
+- Spring pulsar listener로 Pulsar java client 리팩토링
+- Tuya message service, About pulsar
+- 당근페이 - 확장성 있는 TCP 통신 시스템 구축하기
+- 올리브영 셔터 이미지 업로드 성능 개선기
+- 경쟁력 있는 개발자를 위한 '클라우드 디자인 패턴' - 엘키
+- CJ 올리브영의 서버리스 랭킹 시스템 구축기
+- YOUNGJAE.KIM - 우리 회사의 기업문화에 대해
+- Spring N차 캐시 구현
+- ALB, Lambda 전면에 CloudFront 를 두는 이유
+- HTTP2.0 설정
+- Mysql MVCC, GAP LOCK 실습
+- Mysql db replication / spring multi db source config
+- RabbitMQ - Dead Letter Exchange
+- Make EKS endpoint private with VPN
+- DB bulk insert시 확인하면 좋을 것들
+- How to Choose the Number of Topics/Partitions in a Kafka
+- How can prepared statements protect from sql injection
+- Brady - 사용중인 DB 커넥션 수 확인하기
+- Cursor based pagination compared to offset based
+- The best way to use the Spring Data JPA Specification
+- Btree, B+tree simulator
+- 코비의 지극히 사적인 블로그 - JPQL과 영속성 컨텍스트의 관계
+- 코비의 지극히 사적인 블로그 -  Proxy형태로 동작하는 JPA @Transactional
+- Rate limiting - gateway side
+- How to improve DNS resolution performance inside a kubernetes cluster?
+- How metallb works
+- Gradle build cache 
+- ARC/k8s로 Github actions self hosted runners 관리하기, 오토스케일링
+- Create a Simple AWS Lambda Using TypeScript - with sam
+- Jeff Li - Vagrant Networking Explained
 ![main](./.images/main.jpg)    
 
     .
@@ -153,45 +191,48 @@
     │   ├── E20240103 GHCR.md
     │   ├── E20240104 pr file change validator.md
     │   └── E20240105 git chmod no track.md
-    └── tips
-        ├── E20221007 Docker prune.md
-        ├── E20221012 IntelliJ - Column selection.md
-        ├── E20221130 Minikube 설정기.md
-        ├── E20230105 Autosuggestions.md
-        ├── E20230111 Git config commit author.md
-        ├── E20230114 Autojump.md
-        ├── E20230119 Itsycal - calandar.md
-        ├── E20230127 Clipy.md
-        ├── E20230215 Git author tip.md
-        ├── E20230220 K9S.md
-        ├── E20230313 .DS_Store.md
-        ├── E20230318 Turn off app store notification.md
-        ├── E20230323 하위 폴더들이 차지 하고 있는 디스크 용량.md
-        ├── E20230329 Find using port by PID.md
-        ├── E20230330 Check web page has changed.md
-        ├── E20230414 My terminal commands.md
-        ├── E20230417 Vertual Network Computing.md
-        ├── E20230418 drwxr-xr-x.md
-        ├── E20230513 My ubuntu dock conf.md
-        ├── E20230605 ecsimsw-server zsh config.md
-        ├── E20230605 my server banner.md
-        ├── E20230609 MAC - flush dns cache.md
-        ├── E20230618 ghcr.md
-        ├── E20230618 vnc server on ubuntu.md
-        ├── E20230624 xcrun: error: invalid active developer.md
-        ├── E20230630 Semantic Versioning regex.md
-        ├── E20230630 공유기가 두개인 경우.md
-        ├── E20230702 checkip.amazonaws.com.md
-        ├── E20230705 switch java version.md
-        ├── E202311014 ubuntu new user 세팅.md
-        ├── E20240103 ubuntu 22 docker install.md
-        ├── E20240105 TLS nginx.md
-        ├── E20240108 docker prune all.md
-        ├── E20240211 Intellij refactor options.md
-        ├── E20240224 disable sonoma input lang icon.md
-        ├── E20240302 ubuntu delete nginx.md
-        ├── E20240319 reset Grafana user .md
-        ├── E20240516 Pem 키를 환경 변수로 넣어야할 때.md
-        ├── E20240812 Check list.md
-        ├── E20240812 Mac background items added.md
-        └── E20240814 Terminal username and model.md
+    ├── tips
+    │   ├── E20221007 Docker prune.md
+    │   ├── E20221012 IntelliJ - Column selection.md
+    │   ├── E20221130 Minikube 설정기.md
+    │   ├── E20230105 Autosuggestions.md
+    │   ├── E20230111 Git config commit author.md
+    │   ├── E20230114 Autojump.md
+    │   ├── E20230119 Itsycal - calandar.md
+    │   ├── E20230127 Clipy.md
+    │   ├── E20230215 Git author tip.md
+    │   ├── E20230220 K9S.md
+    │   ├── E20230313 .DS_Store.md
+    │   ├── E20230318 Turn off app store notification.md
+    │   ├── E20230323 하위 폴더들이 차지 하고 있는 디스크 용량.md
+    │   ├── E20230329 Find using port by PID.md
+    │   ├── E20230330 Check web page has changed.md
+    │   ├── E20230414 My terminal commands.md
+    │   ├── E20230417 Vertual Network Computing.md
+    │   ├── E20230418 drwxr-xr-x.md
+    │   ├── E20230513 My ubuntu dock conf.md
+    │   ├── E20230605 ecsimsw-server zsh config.md
+    │   ├── E20230605 my server banner.md
+    │   ├── E20230609 MAC - flush dns cache.md
+    │   ├── E20230618 ghcr.md
+    │   ├── E20230618 vnc server on ubuntu.md
+    │   ├── E20230624 xcrun: error: invalid active developer.md
+    │   ├── E20230630 Semantic Versioning regex.md
+    │   ├── E20230630 공유기가 두개인 경우.md
+    │   ├── E20230702 checkip.amazonaws.com.md
+    │   ├── E20230705 switch java version.md
+    │   ├── E202311014 ubuntu new user 세팅.md
+    │   ├── E20240103 ubuntu 22 docker install.md
+    │   ├── E20240105 TLS nginx.md
+    │   ├── E20240108 docker prune all.md
+    │   ├── E20240211 Intellij refactor options.md
+    │   ├── E20240224 disable sonoma input lang icon.md
+    │   ├── E20240302 ubuntu delete nginx.md
+    │   ├── E20240319 reset Grafana user .md
+    │   ├── E20240516 Pem 키를 환경 변수로 넣어야할 때.md
+    │   ├── E20240812 Check list.md
+    │   ├── E20240812 Mac background items added.md
+    │   └── E20240814 Terminal username and model.md
+    ├── closed_issues.txt
+    ├── open_issues.txt
+    └── updated_readme.md
