@@ -40,8 +40,9 @@ jobs:
           echo "" >>README.md
           echo "## Closed Issues" >> README.md
           cat closed_issues.txt | sed 's/^/- /' >> README.md
-          
-          echo -e "![main](./.images/main.jpg)    \n" >> README.md
+          echo "" >> README.md
+#          echo -e "![main](./.images/main.jpg)    \n" >> README.md
+
           tree --dirsfirst --noreport -I README.md | sed 's/^/    /' >> README.md
       - name: push
         env:
