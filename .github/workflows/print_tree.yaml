@@ -12,35 +12,32 @@ jobs:
         uses: actions/checkout@v3
       - name: Append directory tree to README
         run: |
+          # Create readme
           sudo apt-get install tree
           sudo rm -rf README.md
           touch README.md
           git add README.md
           echo "# Daily notes    " > README.md
-          
-          # Fetch open issues
+               
+          # Opened issue
+          echo "### Opened issues" >> README.md
           curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
             "https://api.github.com/repos/${{ github.repository }}/issues?state=open" \
             | jq -r '.[] | .title' > open_issues.txt
-  
-          # Fetch closed issues
+          cat open_issues.txt | sed 's/^/- /' >> README.md
+          echo "" >> README.md
+          
+          # Closed issue
+          echo "### Awesome articles" >> README.md
           curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
             "https://api.github.com/repos/${{ github.repository }}/issues?state=closed" \
             | jq -r '.[] | .title' > closed_issues.txt
-  
-          # Create a temporary file with the updated README content
-          echo "### Opened issues" >> README.md
-          echo "" >> README.md
-          cat open_issues.txt | sed 's/^/- /' >> README.md
-          echo "" >> README.md
-          
-          echo "### Closed issues" >> README.md
           cat closed_issues.txt | sed 's/^/- /' >> README.md
           
           # My articles
-          echo "### Daily articles" >> README.md
+          echo "### Project tree" >> README.md
           tree --dirsfirst --noreport -I README.md | sed 's/^/    /' >> README.md
       - name: push
         env:
