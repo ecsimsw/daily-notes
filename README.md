@@ -2,7 +2,7 @@
 ![main](./.images/main.jpg)    
 
     .
-    ├── AWS
+    ├── aws
     │   ├── E20220916 AWS ECR.md
     │   ├── E20220921 VPC 구성하기와 지원되지 않는 VPC 구성.md
     │   ├── E20221112 Route53과 ALB로 급한 불 끄기.md
@@ -18,40 +18,7 @@
     │   ├── E20240302 route53 으로 domain 장애 조치.md
     │   ├── E20240410 CloudFront jwt decoder function.md
     │   └── E20240410 CloudFront signed url.md
-    ├── CICD
-    │   ├── E20220915 Jenkins shared library.md
-    │   ├── E20220923 Jenkins generic webhook trigger plugin.md
-    │   ├── E20221012 젠킨스 ContainerTemplate 함수화하기.md
-    │   ├── E20221026 Apply SonarScanner on Jenkins.md
-    │   ├── E20230413 jenkins auto re-run script.md
-    │   ├── E20230414 Jenkins agent health checker.md
-    │   ├── E20230511 github-actions-self-hosted 사용 전략.md
-    │   ├── E20230714 Github action gradle cache.md
-    │   └── E20240104 pr file change validator.md
-    ├── DB
-    │   ├── E20221007 NOSQL vs RDBMS.md
-    │   ├── E20221008 ACID.md
-    │   ├── E20221009 Why NoSql is better at scaling out.md
-    │   ├── E20221010 DBMS의 데이터 버퍼.md
-    │   ├── E20221010 JPA Transactional readOnly.md
-    │   ├── E20221016 Redis 아는 척하기.md
-    │   ├── E20221016 캐시 전략.md
-    │   ├── E20230523 Sharding, does it still need to search all the sharding database servers?.md
-    │   ├── E20230722 DB file size.md
-    │   ├── E20230723 DB 인덱싱.md
-    │   ├── E20230725 DB 조회 실행 순서.md
-    │   ├── E20231116 create mysql user for specific ip.md
-    │   ├── E20231230 mongosh 명령어 모음.md
-    │   ├── E20240220 table based lock 을 row lock 으로.md
-    │   ├── E20240314 Mysql MVCC.md
-    │   ├── E20240314 gap lock.md
-    │   ├── E20240321 실행계획으로 보는 것.md
-    │   ├── E20240321 클러스터드 인덱스, 넌클러스터드 인덱스.md
-    │   ├── E20240327 머릿속 인덱스 정리하기.md
-    │   ├── E20240328 머릿속 트랜잭션 정리.md
-    │   ├── E20240531 DB insert.md
-    │   └── E20240624 Mysql backup.md
-    ├── DEV
+    ├── backend
     │   ├── E20220921 인증과 인가.md
     │   ├── E20221014 Spring MVC DTO에 Setter가 필요한 경우.md
     │   ├── E20221024 Elasticsearch 아는 척하기.md
@@ -98,86 +65,114 @@
     │   ├── E20240528 대표적인 IPC.md
     │   ├── E20240528 서버 분리와 DB 분리.md
     │   └── E20240530 Cloudfront Signed url 생성 - AWS  SDK Java V2.md
-    ├── ENV
-    │   ├── E20221130 Minikube 설정기.md
-    │   ├── E20230105 Autosuggestions.md
-    │   ├── E20230111 Git config commit author.md
-    │   ├── E20230114 Autojump.md
-    │   ├── E20230119 Itsycal - calandar.md
-    │   ├── E20230127 Clipy.md
-    │   ├── E20230220 K9S.md
-    │   ├── E20230313 .DS_Store.md
-    │   ├── E20230318 Turn off app store notification.md
-    │   ├── E20230513 My ubuntu dock conf.md
-    │   ├── E20240103 ubuntu 22 docker install.md
-    │   ├── E20240108 docker prune all.md
-    │   ├── E20240812 Check list.md
-    │   ├── E20240812 Mac background items added.md
-    │   └── E20240814 Terminal username and model.md
-    ├── Git
+    ├── cs
+    │   ├── db
+    │   │   ├── E20221007 NOSQL vs RDBMS.md
+    │   │   ├── E20221008 ACID.md
+    │   │   ├── E20221009 Why NoSql is better at scaling out.md
+    │   │   ├── E20221010 DBMS의 데이터 버퍼.md
+    │   │   ├── E20221010 JPA Transactional readOnly.md
+    │   │   ├── E20221016 Redis 아는 척하기.md
+    │   │   ├── E20221016 캐시 전략.md
+    │   │   ├── E20230523 Sharding, does it still need to search all the sharding database servers?.md
+    │   │   ├── E20230722 DB file size.md
+    │   │   ├── E20230723 DB 인덱싱.md
+    │   │   ├── E20230725 DB 조회 실행 순서.md
+    │   │   ├── E20231116 create mysql user for specific ip.md
+    │   │   ├── E20231230 mongosh 명령어 모음.md
+    │   │   ├── E20240220 table based lock 을 row lock 으로.md
+    │   │   ├── E20240314 Mysql MVCC.md
+    │   │   ├── E20240314 gap lock.md
+    │   │   ├── E20240321 실행계획으로 보는 것.md
+    │   │   ├── E20240321 클러스터드 인덱스, 넌클러스터드 인덱스.md
+    │   │   ├── E20240327 머릿속 인덱스 정리하기.md
+    │   │   ├── E20240328 머릿속 트랜잭션 정리.md
+    │   │   ├── E20240531 DB insert.md
+    │   │   └── E20240624 Mysql backup.md
+    │   ├── network
+    │   │   ├── 20240128 HTTP 버전.md
+    │   │   ├── E20220918 TCP Handshake.md
+    │   │   ├── E20221002 CIDR.md
+    │   │   ├── E20221003 TCP-IP 4계층.md
+    │   │   ├── E20221010 DNS- A record와 CNAME의 차이.md
+    │   │   ├── E20221112 NAS란.md
+    │   │   ├── E20221125 VPC를 구성하는 가장 기본적인 방법.md
+    │   │   ├── E20230531 Https 원리.md
+    │   │   ├── E20240309 누군가 나에게 Rest API 가 뭔지 물어본다면.md
+    │   │   └── E20240414 Content-cache.md
+    │   └── os
+    │       ├── E20220915 블록킹과 논블록킹, 동기와 비동기.md
+    │       ├── E20220916 컴퓨터가 부팅되는 과정.md
+    │       ├── E20220919 Containers vs Virtual machines.md
+    │       ├── E20221014 FD, Redirection, Pipe.md
+    │       ├── E20221014 nohup과 &.md
+    │       ├── E20230117 Expand Proxmox Disk.md
+    │       ├── E20230225 Authorized_keys와 known_hosts.md
+    │       ├── E20230303 Interrupt.md
+    │       ├── E20230510 Linux kill.md
+    │       ├── E20230605 htop으로 모니터링.md
+    │       ├── E20230605 linux cpu info.md
+    │       ├── E20230630 arp scan.md
+    │       ├── E20230705 What is bin sh -c.md
+    │       └── E20231114 docker-on-ubuntu.md
+    ├── ops
+    │   ├── deployment
+    │   │   ├── E20220915 Jenkins shared library.md
+    │   │   ├── E20220923 Jenkins generic webhook trigger plugin.md
+    │   │   ├── E20221012 젠킨스 ContainerTemplate 함수화하기.md
+    │   │   ├── E20221026 Apply SonarScanner on Jenkins.md
+    │   │   ├── E20230413 jenkins auto re-run script.md
+    │   │   └── E20230414 Jenkins agent health checker.md
+    │   ├── kubernetes
+    │   │   ├── E20221102 k8s의 볼륨.md
+    │   │   ├── E20221103 k8s의 PV, PVC.md
+    │   │   ├── E20221201 How to create user, role on K8S.md
+    │   │   ├── E20221206 Master node, worker node .md
+    │   │   ├── E20221206 Pod.md
+    │   │   ├── E20230111 On premise K8S cluster 구성하기.md
+    │   │   ├── E20230111 Why you can’t ping a Kubernetes Service.md
+    │   │   ├── E20230114 How to configure cluster on proxmox.md
+    │   │   ├── E20230115 DNS, K8S Core DNS.md
+    │   │   ├── E20230308 Deployment의 파드 업데이트 방식.md
+    │   │   ├── E20230308 매번 헷갈리는 Replicaset, Daemonset, Statefulset, Deployment.md
+    │   │   ├── E20230616 k8s 세가지 probe.md
+    │   │   ├── E20230616 statefulset.md
+    │   │   ├── E20230713 PodDisruptionBudget.md
+    │   │   ├── E20230714 Core dns name policy.md
+    │   │   ├── E20230719 Service port.md
+    │   │   ├── E20231115 Kubernetes volume 과 NFS 설정.md
+    │   │   ├── E20240517 Install k8s v1.28.md
+    │   │   └── E20240530 picup k8s cheat sheet.md
     │   ├── E20220915 Git submodule.md
     │   ├── E20221019 How to migrate multiple repo to mono repo.md
     │   ├── E20221102 Git LFS.md
+    │   ├── E20230511 github-actions-self-hosted 사용 전략.md
+    │   ├── E20230714 Github action gradle cache.md
     │   ├── E20230720 submodule fetch erorr.md
     │   ├── E20230806 git filter all repo.md
     │   ├── E20240103 GHCR.md
+    │   ├── E20240104 pr file change validator.md
     │   └── E20240105 git chmod no track.md
-    ├── Kubernetes
-    │   ├── E20221102 k8s의 볼륨.md
-    │   ├── E20221103 k8s의 PV, PVC.md
-    │   ├── E20221201 How to create user, role on K8S.md
-    │   ├── E20221206 Master node, worker node .md
-    │   ├── E20221206 Pod.md
-    │   ├── E20230111 On premise K8S cluster 구성하기.md
-    │   ├── E20230111 Why you can’t ping a Kubernetes Service.md
-    │   ├── E20230114 How to configure cluster on proxmox.md
-    │   ├── E20230115 DNS, K8S Core DNS.md
-    │   ├── E20230308 Deployment의 파드 업데이트 방식.md
-    │   ├── E20230308 매번 헷갈리는 Replicaset, Daemonset, Statefulset, Deployment.md
-    │   ├── E20230616 k8s 세가지 probe.md
-    │   ├── E20230616 statefulset.md
-    │   ├── E20230713 PodDisruptionBudget.md
-    │   ├── E20230714 Core dns name policy.md
-    │   ├── E20230719 Service port.md
-    │   ├── E20231115 Kubernetes volume 과 NFS 설정.md
-    │   ├── E20240517 Install k8s v1.28.md
-    │   └── E20240530 picup k8s cheat sheet.md
-    ├── Network
-    │   ├── 20240128 HTTP 버전.md
-    │   ├── E20220918 TCP Handshake.md
-    │   ├── E20221002 CIDR.md
-    │   ├── E20221003 TCP-IP 4계층.md
-    │   ├── E20221010 DNS- A record와 CNAME의 차이.md
-    │   ├── E20221112 NAS란.md
-    │   ├── E20221125 VPC를 구성하는 가장 기본적인 방법.md
-    │   ├── E20230531 Https 원리.md
-    │   ├── E20240309 누군가 나에게 Rest API 가 뭔지 물어본다면.md
-    │   └── E20240414 Content-cache.md
-    ├── OS
-    │   ├── E20220915 블록킹과 논블록킹, 동기와 비동기.md
-    │   ├── E20220916 컴퓨터가 부팅되는 과정.md
-    │   ├── E20220919 Containers vs Virtual machines.md
-    │   ├── E20221014 FD, Redirection, Pipe.md
-    │   ├── E20221014 nohup과 &.md
-    │   ├── E20230117 Expand Proxmox Disk.md
-    │   ├── E20230225 Authorized_keys와 known_hosts.md
-    │   ├── E20230303 Interrupt.md
-    │   ├── E20230323 하위 폴더들이 차지 하고 있는 디스크 용량.md
-    │   ├── E20230329 Find using port by PID.md
-    │   ├── E20230418 drwxr-xr-x.md
-    │   ├── E20230510 Linux kill.md
-    │   ├── E20230605 htop으로 모니터링.md
-    │   ├── E20230605 linux cpu info.md
-    │   ├── E20230630 arp scan.md
-    │   ├── E20230705 What is bin sh -c.md
-    │   └── E20231114 docker-on-ubuntu.md
-    └── Tip
+    └── tips
         ├── E20221007 Docker prune.md
         ├── E20221012 IntelliJ - Column selection.md
+        ├── E20221130 Minikube 설정기.md
+        ├── E20230105 Autosuggestions.md
+        ├── E20230111 Git config commit author.md
+        ├── E20230114 Autojump.md
+        ├── E20230119 Itsycal - calandar.md
+        ├── E20230127 Clipy.md
         ├── E20230215 Git author tip.md
+        ├── E20230220 K9S.md
+        ├── E20230313 .DS_Store.md
+        ├── E20230318 Turn off app store notification.md
+        ├── E20230323 하위 폴더들이 차지 하고 있는 디스크 용량.md
+        ├── E20230329 Find using port by PID.md
         ├── E20230330 Check web page has changed.md
         ├── E20230414 My terminal commands.md
         ├── E20230417 Vertual Network Computing.md
+        ├── E20230418 drwxr-xr-x.md
+        ├── E20230513 My ubuntu dock conf.md
         ├── E20230605 ecsimsw-server zsh config.md
         ├── E20230605 my server banner.md
         ├── E20230609 MAC - flush dns cache.md
@@ -189,9 +184,14 @@
         ├── E20230702 checkip.amazonaws.com.md
         ├── E20230705 switch java version.md
         ├── E202311014 ubuntu new user 세팅.md
+        ├── E20240103 ubuntu 22 docker install.md
         ├── E20240105 TLS nginx.md
+        ├── E20240108 docker prune all.md
         ├── E20240211 Intellij refactor options.md
         ├── E20240224 disable sonoma input lang icon.md
         ├── E20240302 ubuntu delete nginx.md
         ├── E20240319 reset Grafana user .md
-        └── E20240516 Pem 키를 환경 변수로 넣어야할 때.md
+        ├── E20240516 Pem 키를 환경 변수로 넣어야할 때.md
+        ├── E20240812 Check list.md
+        ├── E20240812 Mac background items added.md
+        └── E20240814 Terminal username and model.md
