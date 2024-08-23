@@ -9,32 +9,15 @@ jobs:
     permissions: write-all
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Create README.md
+        uses: actions/checkout@v3
+      - name: Append directory tree to README
         run: |
+          sudo apt-get install tree
           sudo rm -rf README.md
           touch README.md
           git add README.md
           echo "# My daily note    " > README.md
-      - name: Write issue lists
-        run: |
-          echo "Fetching open issues..."
-          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-               -H "Accept: application/vnd.github.v3+json" \
-               "https://api.github.com/repos/${{ github.repository }}/issues?state=open" | jq -r '.[] | .title' > open_issues.txt
-          
-          # Fetch closed issues
-          echo "Fetching closed issues..."
-          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-               -H "Accept: application/vnd.github.v3+json" \
-               "https://api.github.com/repos/${{ github.repository }}/issues?state=closed" | jq -r '.[] | .title' > closed_issues.txt
-
-          echo "### Issue - open    " >> README.md
-          echo "### Issue - closed    " >> README.md
-      - name: Append directory tree to README
-        run: |
-          sudo apt-get install tree
-#          echo -e "![main](./.images/main.jpg)    \n" >> README.md
+          echo -e "![main](./.images/main.jpg)    \n" >> README.md
           tree --dirsfirst --noreport -I README.md | sed 's/^/    /' >> README.md
       - name: push
         env:
