@@ -31,7 +31,6 @@ jobs:
 
           echo "### Issue - open    " >> README.md
           echo "### Issue - closed    " >> README.md
-
       - name: Append directory tree to README
         run: |
           sudo apt-get install tree
