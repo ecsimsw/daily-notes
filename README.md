@@ -37,7 +37,6 @@
 - ARC/k8s로 Github actions self hosted runners 관리하기, 오토스케일링
 - Create a Simple AWS Lambda Using TypeScript - with sam
 - Jeff Li - Vagrant Networking Explained
-![main](./.images/main.jpg)    
 
     .
     ├── aws
