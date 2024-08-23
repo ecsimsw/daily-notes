@@ -35,7 +35,7 @@ jobs:
             | jq -r '.[] | .title' | sed 's/^/- /' >> README.md
           
           # My articles
-          echo "### Project tree" >> README.md
+          echo "### Index" >> README.md
           tree --dirsfirst --noreport -I README.md | sed 's/^/    /' >> README.md
       - name: push
         env:
