@@ -24,17 +24,15 @@ jobs:
           curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
             "https://api.github.com/repos/${{ github.repository }}/issues?state=open" \
-            | jq -r '.[] | .title' > open_issues.txt
-          cat open_issues.txt | sed 's/^/- /' >> README.md
+            | jq -r '.[] | .title' | sed 's/^/- /' >> README.md
           echo "" >> README.md
           
           # Closed issue
-          echo "### Awesome articles" >> README.md
+          echo "### Closed issue" >> README.md
           curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
             "https://api.github.com/repos/${{ github.repository }}/issues?state=closed" \
-            | jq -r '.[] | .title' > closed_issues.txt
-          cat closed_issues.txt | sed 's/^/- /' >> README.md
+            | jq -r '.[] | .title' | sed 's/^/- /' >> README.md
           
           # My articles
           echo "### Project tree" >> README.md
