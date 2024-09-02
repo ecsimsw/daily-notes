@@ -5,7 +5,7 @@
 - AWS를 활용한 확장성 높은 모바일 트레이딩 시스템 (MTS) 구축하기
 - 리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 : NHN Cloud
 
-### Awesome articles
+### Closed issue
 - Spring pulsar listener로 Pulsar java client 리팩토링
 - Tuya message service, About pulsar
 - 당근페이 - 확장성 있는 TCP 통신 시스템 구축하기
@@ -36,7 +36,7 @@
 - ARC/k8s로 Github actions self hosted runners 관리하기, 오토스케일링
 - Create a Simple AWS Lambda Using TypeScript - with sam
 - Jeff Li - Vagrant Networking Explained
-### Project tree
+### Index
     .
     ├── aws
     │   ├── E20220916 AWS ECR.md
