@@ -1,5 +1,6 @@
 # Daily notes    
 ### Opened issues
+- 헤이홈 프로젝트 초기 세팅 / 개발 환경, 인프라 고민
 - Amazon ECS Service Connect를 활용하여 손쉽게 마이크로서비스 운영하기
 - AWS에서 어떤 컨테이너 서비스를 이용해야 하나요?
 - Lambda와 WAF를 이용한 Rate-Based Blacklisting 기능 구현
