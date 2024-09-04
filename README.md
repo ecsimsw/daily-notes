@@ -1,5 +1,6 @@
 # Daily notes    
 ### Opened issues
+- ECS 운영 시 주의사항
 - ECS Terraform IaC
 - 헤이홈 프로젝트 초기 세팅 / 개발 환경, 인프라 고민
 - Amazon ECS Service Connect를 활용하여 손쉽게 마이크로서비스 운영하기
