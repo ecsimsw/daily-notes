@@ -233,7 +233,8 @@
     │   ├── E20240516 Pem 키를 환경 변수로 넣어야할 때.md
     │   ├── E20240812 Check list.md
     │   ├── E20240812 Mac background items added.md
-    │   └── E20240814 Terminal username and model.md
+    │   ├── E20240814 Terminal username and model.md
+    │   └── E20240924 자바 프로세스, 포트 목록 명령어.md
     ├── closed_issues.txt
     ├── open_issues.txt
     └── updated_readme.md
