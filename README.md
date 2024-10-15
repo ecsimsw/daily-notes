@@ -1,14 +1,13 @@
 # Daily notes    
 ### Opened issues
 - ECS 운영 시 주의사항
-- ECS Terraform IaC
-- 헤이홈 프로젝트 초기 세팅 / 개발 환경, 인프라 고민
 - Amazon ECS Service Connect를 활용하여 손쉽게 마이크로서비스 운영하기
 - Lambda와 WAF를 이용한 Rate-Based Blacklisting 기능 구현
 - AWS를 활용한 확장성 높은 모바일 트레이딩 시스템 (MTS) 구축하기
 - 리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 : NHN Cloud
 
 ### Closed issue
+- ECS Terraform IaC
 - AWS에서 어떤 컨테이너 서비스를 이용해야 하나요?
 - Spring pulsar listener로 Pulsar java client 리팩토링
 - Tuya message service, About pulsar
@@ -38,7 +37,6 @@
 - How metallb works
 - Gradle build cache 
 - ARC/k8s로 Github actions self hosted runners 관리하기, 오토스케일링
-- Create a Simple AWS Lambda Using TypeScript - with sam
 ### Index
     .
     ├── aws
