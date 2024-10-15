@@ -1,5 +1,6 @@
 # Daily notes    
 ### Opened issues
+- Eclipse memory analyzer
 - ECS 운영 시 주의사항
 - Amazon ECS Service Connect를 활용하여 손쉽게 마이크로서비스 운영하기
 - Lambda와 WAF를 이용한 Rate-Based Blacklisting 기능 구현
