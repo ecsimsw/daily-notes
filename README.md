@@ -3,7 +3,6 @@
 - ECS 운영 시 주의사항
 - Amazon ECS Service Connect를 활용하여 손쉽게 마이크로서비스 운영하기
 - Lambda와 WAF를 이용한 Rate-Based Blacklisting 기능 구현
-- AWS를 활용한 확장성 높은 모바일 트레이딩 시스템 (MTS) 구축하기
 - 리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 : NHN Cloud
 
 ### Closed issue
@@ -17,6 +16,7 @@
 - CJ 올리브영의 서버리스 랭킹 시스템 구축기
 - YOUNGJAE.KIM - 우리 회사의 기업문화에 대해
 - Spring N차 캐시 구현
+- AWS를 활용한 확장성 높은 모바일 트레이딩 시스템 (MTS) 구축하기
 - ALB, Lambda 전면에 CloudFront 를 두는 이유
 - HTTP2.0 설정
 - Mysql MVCC, GAP LOCK 실습
@@ -36,7 +36,6 @@
 - How to improve DNS resolution performance inside a kubernetes cluster?
 - How metallb works
 - Gradle build cache 
-- ARC/k8s로 Github actions self hosted runners 관리하기, 오토스케일링
 ### Index
     .
     ├── aws
