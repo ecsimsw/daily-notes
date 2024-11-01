@@ -189,7 +189,8 @@
     │   ├── E20240103 GHCR.md
     │   ├── E20240104 pr file change validator.md
     │   ├── E20240105 git chmod no track.md
-    │   └── E20241101 Ubuntu user init.md
+    │   ├── E20241101 Ubuntu user init.md
+    │   └── E20241101 proxy 서버 ngrep.md
     ├── tips
     │   ├── E20221007 Docker prune.md
     │   ├── E20221012 IntelliJ - Column selection.md
