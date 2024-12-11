@@ -1,7 +1,7 @@
 # Daily notes    
 ### Opened issues
-- ECS metric, log 수집
-- AWS 이벤트 처리 플랫폼 비교, SQS + SNS 조합 vs MSK
+- Logging 시스템 개선, Grafana labs LGTM 스택 도입기
+- 서비스 간 이벤트 전달 아키텍쳐 고민
 - ECS 운영 시 주의사항
 - Amazon ECS Service Connect를 활용하여 손쉽게 마이크로서비스 운영하기
 - Lambda와 WAF를 이용한 Rate-Based Blacklisting 기능 구현
@@ -192,7 +192,8 @@
     │   ├── E20240104 pr file change validator.md
     │   ├── E20240105 git chmod no track.md
     │   ├── E20241101 Ubuntu user init.md
-    │   └── E20241101 proxy 서버 ngrep.md
+    │   ├── E20241101 proxy 서버 ngrep.md
+    │   └── E20241211 docker group.md
     ├── tips
     │   ├── E20221007 Docker prune.md
     │   ├── E20221012 IntelliJ - Column selection.md
