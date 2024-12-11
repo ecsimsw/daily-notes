@@ -1,13 +1,13 @@
 # Daily notes    
 ### Opened issues
 - Logging 시스템 개선, Grafana labs LGTM 스택 도입기
-- 서비스 간 이벤트 전달 아키텍쳐 고민
 - ECS 운영 시 주의사항
 - Amazon ECS Service Connect를 활용하여 손쉽게 마이크로서비스 운영하기
 - Lambda와 WAF를 이용한 Rate-Based Blacklisting 기능 구현
 - 리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 : NHN Cloud
 
 ### Closed issue
+- EDA 구조 고민, SNS + SQS 조합 분석
 - Eclipse memory analyzer, 특정 자바 객체가 얼마나 많은 메모리를 사용하고 있는지 확인
 - ECS Terraform IaC
 - AWS에서 어떤 컨테이너 서비스를 이용해야 하나요?
@@ -37,7 +37,6 @@
 - 코비의 지극히 사적인 블로그 -  Proxy형태로 동작하는 JPA @Transactional
 - Rate limiting - gateway side
 - How to improve DNS resolution performance inside a kubernetes cluster?
-- How metallb works
 ### Index
     .
     ├── aws
