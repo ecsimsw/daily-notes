@@ -1,5 +1,6 @@
 # Daily notes    
 ### Opened issues
+- 회사 서버 OOM 문제 모니터링, 원인 분석과 대기열 구조 개선
 - Logging 시스템 개선, Grafana labs LGTM 스택 도입기
 - ECS 운영 시 주의사항
 - Amazon ECS Service Connect를 활용하여 손쉽게 마이크로서비스 운영하기
