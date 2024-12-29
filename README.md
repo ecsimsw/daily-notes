@@ -1,12 +1,12 @@
 # Daily notes    
 ### Opened issues
-- 회사 서버 OOM 문제 모니터링, 원인 분석과 대기열 구조 개선
 - ECS 운영 시 주의사항
 - Amazon ECS Service Connect를 활용하여 손쉽게 마이크로서비스 운영하기
 - Lambda와 WAF를 이용한 Rate-Based Blacklisting 기능 구현
 - 리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 : NHN Cloud
 
 ### Closed issue
+- 회사 서버 OOM 문제 모니터링, 원인 분석과 대기열 구조 개선
 - Logging 시스템 개선, Grafana labs LGTM 스택 도입기
 - EDA 구조 고민, SNS + SQS 조합 분석
 - Eclipse memory analyzer, 특정 자바 객체가 얼마나 많은 메모리를 사용하고 있는지 확인
@@ -36,7 +36,6 @@
 - Btree, B+tree simulator
 - 코비의 지극히 사적인 블로그 - JPQL과 영속성 컨텍스트의 관계
 - 코비의 지극히 사적인 블로그 -  Proxy형태로 동작하는 JPA @Transactional
-- Rate limiting - gateway side
 ### Index
     .
     ├── aws
