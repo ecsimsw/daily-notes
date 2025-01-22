@@ -1,6 +1,6 @@
 # Daily notes    
 ### Opened issues
-- ECS 운영 시 주의사항
+- 분산락 라이브러리 개발
 - Amazon ECS Service Connect를 활용하여 손쉽게 마이크로서비스 운영하기
 - Lambda와 WAF를 이용한 Rate-Based Blacklisting 기능 구현
 - 리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 : NHN Cloud
