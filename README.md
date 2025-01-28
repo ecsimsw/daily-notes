@@ -1,5 +1,6 @@
 # Daily notes    
 ### Opened issues
+- 스프링 스큐리티 스켈레톤
 - 카프카 운영 경험
 - 분산락 라이브러리 개발
 - Amazon ECS Service Connect를 활용하여 손쉽게 마이크로서비스 운영하기
