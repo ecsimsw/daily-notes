@@ -1,6 +1,5 @@
 # Daily notes    
 ### Opened issues
-- 온프라미스 우분투 설정 config 정리
 - 카프카 운영 경험
 - 분산락 라이브러리 개발
 - Amazon ECS Service Connect를 활용하여 손쉽게 마이크로서비스 운영하기
@@ -8,6 +7,7 @@
 - 리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 : NHN Cloud
 
 ### Closed issue
+- 온프라미스 우분투 설정 config 정리
 - 스프링 스큐리티 스켈레톤
 - 회사 서버 OOM 문제 모니터링, 원인 분석과 대기열 구조 개선
 - Logging 시스템 개선, Grafana labs LGTM 스택 도입기
@@ -37,7 +37,6 @@
 - Cursor based pagination compared to offset based
 - The best way to use the Spring Data JPA Specification
 - Btree, B+tree simulator
-- 코비의 지극히 사적인 블로그 - JPQL과 영속성 컨텍스트의 관계
 ### Index
     .
     ├── aws
