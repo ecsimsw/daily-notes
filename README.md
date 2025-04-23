@@ -1,6 +1,6 @@
 # Daily notes    
 ### Opened issues
-- 간헐적으로 발생하는 레디스 Command timeout 이슈
+- KafkaTemplate thread 동작 구조
 - 토스 뱅크 - 캐시를 적용하기 까지의 험난한 길 (TPS 1만 안정적으로 서비스하기)
 - 카카오 페이 - JPA Transactional 잘 알고 쓰고 계신가요?
 - Amazon ECS Service Connect를 활용하여 손쉽게 마이크로서비스 운영하기
