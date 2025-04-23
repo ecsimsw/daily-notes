@@ -1,6 +1,5 @@
 # Daily notes    
 ### Opened issues
-- 레디스 동시성 문제, 두번의 갱실 분실 문제 소개하기
 - 간헐적으로 발생하는 레디스 Command timeout 이슈
 - 토스 뱅크 - 캐시를 적용하기 까지의 험난한 길 (TPS 1만 안정적으로 서비스하기)
 - 카카오 페이 - JPA Transactional 잘 알고 쓰고 계신가요?
@@ -9,6 +8,7 @@
 - 리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 : NHN Cloud
 
 ### Closed issue
+- 레디스 동시성 문제, 두번의 갱실 분실 문제 소개하기
 - 온프라미스 Ubuntu, Thingsboard config 정리
 - 회사 서버 OOM 문제 모니터링, 원인 분석과 대기열 구조 개선
 - Logging 시스템 개선, Grafana labs LGTM 스택 도입기
@@ -38,7 +38,6 @@
 - Cursor based pagination compared to offset based
 - The best way to use the Spring Data JPA Specification
 - Btree, B+tree simulator
-- 코비의 지극히 사적인 블로그 - JPQL과 영속성 컨텍스트의 관계
 ### Index
     .
     ├── aws
