@@ -3,8 +3,6 @@
 - 좋아요 수로 정렬 + 페이징 구현 전략
 - 토스 뱅크 - 캐시를 적용하기 까지의 험난한 길 (TPS 1만 안정적으로 서비스하기)
 - 카카오 페이 - JPA Transactional 잘 알고 쓰고 계신가요?
-- Amazon ECS Service Connect를 활용하여 손쉽게 마이크로서비스 운영하기
-- Lambda와 WAF를 이용한 Rate-Based Blacklisting 기능 구현
 - 리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 : NHN Cloud
 
 ### Closed issue
@@ -102,7 +100,8 @@
     │   ├── E20240517 Vault injector for k8s.md
     │   ├── E20240528 대표적인 IPC.md
     │   ├── E20240528 서버 분리와 DB 분리.md
-    │   └── E20240530 Cloudfront Signed url 생성 - AWS  SDK Java V2.md
+    │   ├── E20240530 Cloudfront Signed url 생성 - AWS  SDK Java V2.md
+    │   └── E20250707 Spring application properties.md
     ├── cs
     │   ├── db
     │   │   ├── E20221007 NOSQL vs RDBMS.md
