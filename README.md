@@ -1,5 +1,6 @@
 # Daily notes    
 ### Opened issues
+- 카프카 Producer, Consumer 동작 방식 이해
 - 좋아요 수로 정렬 + 페이징 구현 전략
 - 토스 뱅크 - 캐시를 적용하기 까지의 험난한 길 (TPS 1만 안정적으로 서비스하기)
 - 카카오 페이 - JPA Transactional 잘 알고 쓰고 계신가요?
