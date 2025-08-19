@@ -6,6 +6,7 @@
 - 리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 : NHN Cloud
 
 ### Closed issue
+- 대략적인 Atomic Integer의 성능 확인
 - 카프카 Producer, Consumer 동작 방식 이해
 - KafkaTemplate 동작 구조
 - 레디스 동시성 문제, 두번의 갱실 분실 문제 소개하기
@@ -35,7 +36,6 @@
 - How to Choose the Number of Topics/Partitions in a Kafka
 - How can prepared statements protect from sql injection
 - Brady - 사용중인 DB 커넥션 수 확인하기
-- Cursor based pagination compared to offset based
 ### Index
     .
     ├── aws
