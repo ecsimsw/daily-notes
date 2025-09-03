@@ -1,7 +1,5 @@
 # Daily notes    
 ### Opened issues
-- 좋아요 수로 정렬 + 페이징 구현 전략
-- 토스 뱅크 - 캐시를 적용하기 까지의 험난한 길 (TPS 1만 안정적으로 서비스하기)
 - 카카오 페이 - JPA Transactional 잘 알고 쓰고 계신가요?
 - 리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 : NHN Cloud
 
@@ -10,6 +8,7 @@
 - 카프카 Producer, Consumer 동작 방식 이해
 - KafkaTemplate 동작 구조
 - 레디스 동시성 문제, 두번의 갱실 분실 문제 소개하기
+- 토스 뱅크 - 캐시를 적용하기 까지의 험난한 길 (TPS 1만 안정적으로 서비스하기)
 - 온프라미스 Ubuntu, Thingsboard config 정리
 - 회사 서버 OOM 문제 모니터링, 원인 분석과 대기열 구조 개선
 - Logging 시스템 개선, Grafana labs LGTM 스택 도입기
@@ -35,7 +34,6 @@
 - DB bulk insert시 확인하면 좋을 것들
 - How to Choose the Number of Topics/Partitions in a Kafka
 - How can prepared statements protect from sql injection
-- Brady - 사용중인 DB 커넥션 수 확인하기
 ### Index
     .
     ├── aws
