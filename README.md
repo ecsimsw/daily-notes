@@ -1,5 +1,6 @@
 # Daily notes    
 ### Opened issues
+- 오토 스케일링 환경에서 매트릭 모니터링 방법
 - 카카오 페이 - JPA Transactional 잘 알고 쓰고 계신가요?
 - 리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 : NHN Cloud
 
