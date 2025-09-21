@@ -1,10 +1,10 @@
 # Daily notes    
 ### Opened issues
-- 오토 스케일링 환경에서 매트릭 모니터링 방법
 - 카카오 페이 - JPA Transactional 잘 알고 쓰고 계신가요?
 - 리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 : NHN Cloud
 
 ### Closed issue
+- 오토 스케일링 환경에서 매트릭 모니터링 방법
 - 대략적인 Atomic Integer의 성능 확인
 - 카프카 Producer, Consumer 동작 방식 이해
 - KafkaTemplate 동작 구조
@@ -34,7 +34,6 @@
 - Make EKS endpoint private with VPN
 - DB bulk insert시 확인하면 좋을 것들
 - How to Choose the Number of Topics/Partitions in a Kafka
-- How can prepared statements protect from sql injection
 ### Index
     .
     ├── aws
