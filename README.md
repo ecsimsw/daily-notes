@@ -100,7 +100,8 @@
     │   ├── E20240528 서버 분리와 DB 분리.md
     │   ├── E20240530 Cloudfront Signed url 생성 - AWS  SDK Java V2.md
     │   ├── E20250707 Spring application properties.md
-    │   └── E20250811 Future, Reactive 연습.md
+    │   ├── E20250811 Future, Reactive 연습.md
+    │   └── E20260227 Redis hashing
     ├── cs
     │   ├── db
     │   │   ├── E20221007 NOSQL vs RDBMS.md
@@ -124,7 +125,8 @@
     │   │   ├── E20240327 머릿속 인덱스 정리하기.md
     │   │   ├── E20240328 머릿속 트랜잭션 정리.md
     │   │   ├── E20240531 DB insert.md
-    │   │   └── E20240624 Mysql backup.md
+    │   │   ├── E20240624 Mysql backup.md
+    │   │   └── E20260227 Mysql 인덱스 튜닝
     │   ├── network
     │   │   ├── 20240128 HTTP 버전.md
     │   │   ├── E20220918 TCP Handshake.md
