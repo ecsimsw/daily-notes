@@ -1,0 +1,108 @@
+MySQL 인덱스 튜닝 방법 (InnoDB 기준)
+
+1. MySQL 인덱스 동작 방식 (B+Tree)
+InnoDB 스토리지 엔진은 인덱스 자료구조로 B+Tree 를 사용함.
+모든 데이터(실제 행)는 리프 노드(Leaf Node)에만 저장됨.
+루트/브랜치 노드(내부 노드)에는 키(Key)와 하위 노드를 가리키는 포인터만 저장하므로, 트리의 전체 높이가 낮아져(flatter) 검색 속도가 향상됨.
+모든 리프 노드는 양방향 연결 리스트(Linked List) 로 서로 연결되어 있어, 범위 검색(WHERE id > 100) 시 리프 노드만 순차적으로 스캔하므로 매우 효율적임.
+
+# 클러스터형 인덱스 (Clustered Index)
+테이블 당 하나만 존재하며, PRIMARY KEY가 지정되면 해당 인덱스가 클러스터형이 됨.
+PK가 없을 경우, UNIQUE NOT NULL 속성의 첫 인덱스가, 그것도 없으면 InnoDB가 내부적으로 생성하는 6Byte의 ROW_ID가 클러스터형 인덱스가 됨.
+인덱스의 리프 노드가 실제 데이터 행 자체를 포함함.
+데이터가 PK 값 순서대로 물리적으로 정렬되어 저장됨.
+PK 기반의 범위 검색에 매우 효율적임.
+
+# 보조 인덱스 (Secondary Index)
+테이블 당 여러 개 생성 가능함.
+리프 노드는 데이터의 주소 역할을 하는 PRIMARY KEY 값을 가지고 있음.
+보조 인덱스로 데이터를 찾을 경우, 인덱스에서 PK 값을 먼저 찾고, 그 PK 값으로 클러스터형 인덱스를 다시 한번 조회하는 과정이 발생함 (Double Lookup).
+
+2. EXPLAIN을 통한 분석
+   쿼리 실행 계획을 확인하는 필수 명령어. SELECT 쿼리 앞에 붙여 사용함.
+
+EXPLAIN SELECT * FROM subscription WHERE device_id = '...';
+
+주요 확인 컬럼:
+type : 테이블 접근 방식. 성능의 핵심 지표. (좋은 순서 → 나쁜 순서)
+- system: 테이블에 단 1개의 행만 존재.
+- const: PRIMARY KEY나 UNIQUE 조건으로 단 1개의 행을 조회함.
+- eq_ref: 조인 시 PRIMARY KEY나 UNIQUE로 연결됨.
+- ref: PK/UNIQUE가 아닌 인덱스로 동등(=) 조건 검색.
+- range: 인덱스를 사용하여 특정 범위(BETWEEN, >, <)를 검색함.
+- index: 인덱스 전체를 스캔함. ALL보다 빠르지만 좋은 상태는 아님.
+- ALL: 풀 테이블 스캔(Full Table Scan). 최악의 경우이며 반드시 튜닝해야 함.
+  key: 실행 계획에서 실제 사용하기로 결정된 인덱스 이름. NULL이면 인덱스를 사용하지 않음을 의미.
+  rows: 쿼리를 처리하기 위해 스캔할 것으로 예측되는 행의 수. 이 수치가 낮을수록 좋음.
+
+Extra:
+- Using index: 커버링 인덱스(Covering Index) 로 처리됨. 실제 데이터에 접근 없이 인덱스만 읽어 쿼리가 완료됨. (매우 좋은 성능)
+- Using where: 인덱스로 필터링하지 못한 데이터를 추가로 필터링함.
+- Using filesort: 인덱스를 사용하지 못하고 별도의 정렬을 수행함. (성능 저하의 주범)
+- Using temporary: 임시 테이블을 생성하여 처리함. (성능 저하의 주범)
+
+3. 인덱스 컬럼 선정 원칙
+   카디널리티(Cardinality)가 높은 컬럼을 우선함.
+   카디널리티란 '데이터의 유일성 정도'를 의미 (ex. 주민등록번호는 높고, 성별은 낮음). 선택도가 높은 컬럼이 인덱스 후보로 적합함.
+
+WHERE, JOIN (ON), ORDER BY 절에 자주 사용되는 컬럼을 대상으로 함.
+이 구문들은 데이터 필터링, 조인, 정렬을 위해 인덱스를 가장 효율적으로 사용함.
+복합 인덱스(Composite Index)를 적극적으로 활용함.
+여러 컬럼을 묶어 하나의 인덱스로 생성함.
+컬럼 순서가 매우 중요하며, MySQL은 인덱스 왼쪽 접두사 원칙(Left-Prefix Rule)을 따름.
+
+# INDEX(A, B, C)가 있을 경우:
+WHERE A = ... (O)
+WHERE A = ... AND B = ... (O)
+WHERE A = ... AND B = ... AND C = ... (O)
+WHERE B = ... (X) -> 인덱스 사용 불가
+WHERE C = ... (X) -> 인덱스 사용 불가
+WHERE A = ... AND C = ... (△) -> A 컬럼에 대해서만 인덱스 사용 가능
+보통 카디널리티가 높고, 활용 빈도가 높은 컬럼을 앞 순서에 배치함.
+커버링 인덱스를 고려하여 설계함.
+쿼리에 필요한 모든 컬럼(SELECT, WHERE 등)을 인덱스가 포함하도록 설계됨.
+데이터 테이블에 접근할 필요가 없어 성능이 매우 향상됨.
+SELECT device_id, vendor FROM subscription WHERE device_id = '...' 쿼리가 있고 INDEX(device_id, vendor)가 있다면 커버링 인덱스로 동작함.
+
+4. JOIN과 인덱스 처리
+   JOIN은 한 테이블(Driving Table)을 먼저 읽고, 그 결과를 바탕으로 다음 테이블(Driven Table)을 조회하는 방식으로 처리됨.
+   성능의 핵심은 Driven Table의 조인 조건(ON) 컬럼에 인덱스가 존재하는 것임.
+   Driven Table의 조인 컬럼에 인덱스가 없을 경우, Driving Table의 결과 한 건마다 Driven Table 전체를 스캔하는 최악의 상황이 발생함.
+   EXPLAIN으로 JOIN 쿼리 실행 시, Driven Table의 type이 ALL이 아닌지 반드시 확인하고, ALL이면 즉시 인덱스 생성을 검토함.
+
+5. InnoDB 락(Lock)과 인덱스
+   InnoDB의 락은 인덱스 레코드를 기준으로 동작함.
+
+# 인덱스와 락의 관계 (가장 중요)
+- UPDATE/DELETE 시 WHERE 절 조건에 인덱스를 사용할 수 있으면, 해당 인덱스 레코드에만 로우 락(Row-level Lock) 이 걸려 동시성이 보장됨.
+- WHERE 절의 조건 컬럼에 인덱스가 없으면, MySQL은 어떤 행을 잠가야 할지 특정하지 못해 테이블을 풀 스캔하면서 만나는 모든 행(row)에 락을 걸게 됨. 이는 사실상 테이블 락(Table Lock) 과 동일하게 동작함.
+
+# 주요 락 종류 (격리 수준 REPEATABLE READ 기준)
+- 레코드 락 (Record Lock): 인덱스 레코드 자체에만 거는 락.
+- 갭 락 (Gap Lock): 인덱스 레코드와 레코드 사이의 '간격(Gap)'을 잠가 새로운 INSERT를 방지함.
+- 넥스트 키 락 (Next-Key Lock): 레코드 락 + 갭 락의 조합. InnoDB의 기본 락 방식.
+- 실전 규칙: 트랜잭션 내에서 데이터를 변경하거나 락을 거는(SELECT ... FOR UPDATE) 쿼리의 WHERE 절에는 반드시 인덱스가 존재하는 컬럼을 사용해야 함.
+
+6. 인덱스 튜닝 실행 규칙
+   EXPLAIN 실행을 습관화함. 쿼리 작성 후 반드시 실행 계획을 확인하는 절차를 가짐.
+   불필요한 인덱스는 생성하지 않음.
+   INSERT, UPDATE, DELETE 시 인덱스도 함께 수정해야 하므로 쓰기 성능을 저하시킴.
+   추가적인 저장 공간을 차지함.
+
+WHERE 절에서 컬럼을 가공하지 않음.
+WHERE SUBSTRING(name, 1, 3) = '김씨' (X) -> 인덱스 사용 불가
+WHERE name LIKE '김씨%' (O) -> 인덱스 사용 가능
+WHERE number_col * 10 = 100 (X) -> 인덱스 사용 불가
+WHERE number_col = 100 / 10 (O) -> 인덱스 사용 가능
+
+LIKE 검색 시 선행 와일드카드(%) 사용을 피함.
+WHERE name LIKE '%길동' (X) -> B+Tree는 왼쪽부터 정렬되므로 시작 글자를 모르면 인덱스 탐색이 불가능하여 풀 스캔이 발생함.
+WHERE name LIKE '홍%' (O) -> 인덱스 탐색 가능.
+
+암시적 형변환을 주의함.
+문자열(VARCHAR) 타입의 컬럼을 숫자로 비교하면 인덱스를 사용하지 못할 수 있음.
+WHERE char_col = 123 (X) -> WHERE char_col = '123' (O)
+부정형 비교(!=, <>) 및 OR 조건은 인덱스 사용 효율이 떨어질 수 있음.
+옵티마이저가 풀 스캔이 더 효율적이라 판단할 수 있음.
+사용되지 않는 인덱스는 주기적으로 삭제 처리함.
+MySQL 5.7 이상에서는 performance_schema를 통해 인덱스 사용 통계를 확인하고 불필요한 인덱스를 제거함.%
